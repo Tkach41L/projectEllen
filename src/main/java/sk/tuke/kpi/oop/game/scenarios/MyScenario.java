@@ -46,8 +46,8 @@ public class MyScenario implements SceneListener {
             }
         });
         scene.getMessageBus().subscribe(World.ACTOR_ADDED_TOPIC,actor -> {
-            if(actor instanceof TestNeutralAlien){
-                new RandomlyMoving().setUp((TestNeutralAlien) actor);
+            if(actor instanceof NewNeutralAlien){
+                new RandomlyMoving().setUp((NewNeutralAlien) actor);
             }
         });
     }
@@ -77,16 +77,16 @@ public class MyScenario implements SceneListener {
                     actor = new Ammo();
                     break;
                 case "money":
-                    actor = new TestMoney();
+                    actor = new NewMoney();
                     break;
                 case ("neutralAlien"):
-                    actor = new TestNeutralAlien();
+                    actor = new NewNeutralAlien();
                     break;
                 case "barrel":
-                    actor = new TestBarrel();
+                    actor = new NewBarrel();
                     break;
                 case "life":
-                    actor = new TestExtraLife();
+                    actor = new NewExtraLife();
                     break;
                 case "laser":
                     actor = new NewLaser(NewLaser.TYPE.BASIC);
