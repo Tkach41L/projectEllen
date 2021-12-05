@@ -40,11 +40,6 @@ public class MyScenario implements SceneListener {
 
     @Override
     public void sceneCreated(@NotNull Scene scene) {
-        scene.getMessageBus().subscribe(World.ACTOR_ADDED_TOPIC, actor -> {
-            if(actor.getClass().equals(Alien.class)){
-                new RandomlyMoving().setUp((Alien) actor);
-            }
-        });
         scene.getMessageBus().subscribe(World.ACTOR_ADDED_TOPIC,actor -> {
             if(actor instanceof NewNeutralAlien){
                 new RandomlyMoving().setUp((NewNeutralAlien) actor);
@@ -68,7 +63,7 @@ public class MyScenario implements SceneListener {
                     actor = new Energy();
                     break;
                 case "alien":
-                    actor = new Alien();
+                    actor = new Alien(new RandomlyMoving());
                     break;
                 case "alienTutorial":
                     actor = new AlienTutorial();
@@ -120,6 +115,9 @@ public class MyScenario implements SceneListener {
                     break;
                 case "fan":
                     actor = new NewFan();
+                    break;
+                case "spitter":
+                    actor = new NewSpitterAlien(new RandomlyMoving());
                     break;
                 default:
                     return null;

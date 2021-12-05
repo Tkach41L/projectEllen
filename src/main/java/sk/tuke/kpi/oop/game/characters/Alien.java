@@ -43,6 +43,10 @@ public class Alien extends AbstractActor implements Movable, Enemy, Alive {
         return speed;
     }
 
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
     @Override
     public void addedToScene(@NotNull Scene scene) {
         super.addedToScene(scene);
@@ -74,5 +78,9 @@ public class Alien extends AbstractActor implements Movable, Enemy, Alive {
         }
         getAnimation().setRotation(direction.getAngle());
         getAnimation().play();
+    }
+
+    public Behaviour<? super Alien> getBehaviour() {
+        return behaviour;
     }
 }

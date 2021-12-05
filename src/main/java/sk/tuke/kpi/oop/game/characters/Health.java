@@ -57,4 +57,9 @@ public class Health {
     public void onExhaustion(ExhaustionEffect effect) {
         this.exhaustionEffects.add(effect);
     }
+
+    public void updateHealth(int max){
+        this.maxHealth = max;
+        this.currentHealth = max;
+    }
 }
