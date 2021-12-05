@@ -18,12 +18,10 @@ public class Take<A extends Keeper> extends AbstractAction<A> {
         Keeper keeper = getActor();
         if (keeper != null && keeper.getBackpack().getSize() < keeper.getBackpack().getCapacity()) {
             for (Actor target : (Objects.requireNonNull(keeper.getScene())).getActors()) {
-                if (keeper.intersects(target) && keeper != target) {
-                    if(keeper.getBackpack().getCapacity() > keeper.getBackpack().getSize()) {
-                        keeper.getBackpack().add((Collectible) target);
-                        (Objects.requireNonNull(target.getScene())).removeActor(target);
-                        return;
-                    }
+                if (keeper.intersects(target) && keeper != target && target instanceof Collectible) {
+                    keeper.getBackpack().add((Collectible) target);
+                    (Objects.requireNonNull(target.getScene())).removeActor(target);
+                    return;
                 }
             }
         }

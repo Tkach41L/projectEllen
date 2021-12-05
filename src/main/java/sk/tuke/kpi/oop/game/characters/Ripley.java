@@ -1,7 +1,6 @@
 package sk.tuke.kpi.oop.game.characters;
 
 
-import org.jetbrains.annotations.NotNull;
 import sk.tuke.kpi.gamelib.GameApplication;
 import sk.tuke.kpi.gamelib.Scene;
 import sk.tuke.kpi.gamelib.framework.AbstractActor;

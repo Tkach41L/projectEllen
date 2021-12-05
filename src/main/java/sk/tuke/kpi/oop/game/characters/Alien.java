@@ -10,12 +10,14 @@ import sk.tuke.kpi.gamelib.framework.actions.Loop;
 import sk.tuke.kpi.gamelib.graphics.Animation;
 import sk.tuke.kpi.oop.game.Direction;
 import sk.tuke.kpi.oop.game.Movable;
+import sk.tuke.kpi.oop.game.behaviours.Behaviour;
 
 import java.util.Objects;
 
 public class Alien extends AbstractActor implements Movable, Enemy, Alive {
     private int speed;
     private Health health;
+    private Behaviour<? super Alien> behaviour;
 
     public Alien() {
         this.speed = 2;
@@ -26,6 +28,16 @@ public class Alien extends AbstractActor implements Movable, Enemy, Alive {
         );
     }
 
+    public Alien(Behaviour<? super Alien> behaviour) {
+        this.speed = 2;
+        setAnimation(new Animation("sprites/alien.png", 32, 32, 0.1f));
+        this.health = new Health(45);
+        this.health.onExhaustion(() ->
+            Objects.requireNonNull(this.getScene()).removeActor(this)
+        );
+        this.behaviour = behaviour;
+    }
+
     @Override
     public int getSpeed() {
         return speed;
@@ -34,6 +46,9 @@ public class Alien extends AbstractActor implements Movable, Enemy, Alive {
     @Override
     public void addedToScene(@NotNull Scene scene) {
         super.addedToScene(scene);
+        if(this.behaviour != null){
+            this.behaviour.setUp(this);
+        }
         for (Actor actor : Objects.requireNonNull(getScene()).getActors()) {
             if (actor instanceof Ripley) {
                 Alive target = (Alive) actor;
