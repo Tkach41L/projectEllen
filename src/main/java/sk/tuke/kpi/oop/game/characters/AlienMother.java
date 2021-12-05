@@ -17,9 +17,10 @@ public class AlienMother extends AbstractActor implements Movable, Alive {
     private Health health;
 
     public AlienMother() {
-        this.speed = 3;
-        health = new Health(160);
+        this.speed = 1;
+        health = new Health(250);
         setAnimation(new Animation("sprites/mother.png", 112, 162, 0.1f));
+        getAnimation().setRotation(90f);
         getAnimation().play();
         this.health.onExhaustion(() -> Objects.requireNonNull(this.getScene()).removeActor(this));
     }
@@ -32,7 +33,7 @@ public class AlienMother extends AbstractActor implements Movable, Alive {
     @Override
     public void addedToScene(@NotNull Scene scene) {
         super.addedToScene(scene);
-//        new RandomlyMoving().setUp(this);
+        new RandomlyMoving().setUp(this);
         scene.getActors().forEach(
             actor -> {
                 if (actor instanceof Alive && !actor.equals(this)) {
@@ -40,7 +41,7 @@ public class AlienMother extends AbstractActor implements Movable, Alive {
                     new Loop<>(
                         new When<>(
                             () -> actor.intersects(this),
-                            new Invoke<>(() -> aliveActor.getHealth().drain(3))
+                            new Invoke<>(() -> aliveActor.getHealth().drain(2))
                         )
                     ).scheduleFor(this);
                 }

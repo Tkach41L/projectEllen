@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="100">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="184">
  <tileset firstgid="1" source="tilesets/tileset01.tsx"/>
  <tileset firstgid="501" source="tilesets/tileset02.tsx"/>
  <layer id="2" name="background" width="50" height="50">
@@ -112,7 +112,6 @@
  </layer>
  <objectgroup id="3" name="actors">
   <object id="1" name="ellen" x="57.2917" y="37.6667" width="31.25" height="29.75"/>
-  <object id="5" name="alien" x="91.3713" y="579.053" width="32" height="30"/>
   <object id="7" name="alien" x="58.5228" y="579.72" width="32" height="30.6667"/>
   <object id="9" name="ammo" x="48.5834" y="187.833" width="15.75" height="14.75"/>
   <object id="11" name="energy" x="64.5417" y="188.375" width="15.75" height="14.75"/>
@@ -140,7 +139,77 @@
   <object id="92" name="buttonYellow" x="62.5" y="737.25" width="15.75" height="16.5"/>
   <object id="96" name="alienTutorial" x="17.3333" y="357.333" width="30.6667" height="26.6667"/>
   <object id="97" name="alienTutorial" x="97.3333" y="357.333" width="30.6667" height="26.6667"/>
-  <object id="98" name="mother" x="470.424" y="677.224" width="53.0973" height="57.755"/>
-  <object id="99" name="spitter" x="166.744" y="277.597" width="22.3568" height="26.0829"/>
+  <object id="98" name="mother" x="491.424" y="721.224" width="53.0973" height="57.755"/>
+  <object id="99" name="spitter" x="692.128" y="202.143" width="22.3568" height="26.0829"/>
+  <object id="100" name="spitter" x="736.842" y="224.499" width="22.3568" height="26.0829"/>
+  <object id="102" name="spitter" x="87.564" y="748.02" width="22.3568" height="26.0829"/>
+  <object id="103" name="spitter" x="29.809" y="593.386" width="22.3568" height="26.0829"/>
+  <object id="104" name="spitter" x="277.597" y="729.39" width="22.3568" height="26.0829"/>
+  <object id="106" name="alien" x="17.5352" y="756.309" width="32" height="30"/>
+  <object id="108" name="alien" x="512.179" y="484.301" width="32" height="30"/>
+  <object id="113" name="alien" x="721.774" y="51.1388" width="32" height="30"/>
+  <object id="115" name="alien" x="648.183" y="165.717" width="32" height="30"/>
+  <object id="116" name="alien" x="283.953" y="51.1388" width="32" height="30"/>
+  <object id="117" name="alien" x="399.463" y="95.8524" width="32" height="30"/>
+  <object id="118" name="alien" x="333.325" y="105.168" width="32" height="30"/>
+  <object id="120" name="alien" x="262.528" y="323.146" width="32" height="30"/>
+  <object id="121" name="alien" x="258.802" y="358.544" width="32" height="30"/>
+  <object id="123" name="spitter" x="243.13" y="338.146" width="22.3568" height="26.0829"/>
+  <object id="124" name="alien" x="169.375" y="358.544" width="32" height="30"/>
+  <object id="125" name="alien" x="541.056" y="292.406" width="32" height="30"/>
+  <object id="128" name="alien" x="277.433" y="566.276" width="32" height="30"/>
+  <object id="129" name="barrel" x="303.257" y="15.9133" width="15.75" height="14.75"/>
+  <object id="130" name="barrel" x="401.068" y="33.6124" width="15.75" height="14.75"/>
+  <object id="131" name="barrel" x="764.365" y="39.2016" width="15.75" height="14.75"/>
+  <object id="132" name="barrel" x="625.567" y="94.162" width="15.75" height="14.75"/>
+  <object id="133" name="barrel" x="399.205" y="227.371" width="15.75" height="14.75"/>
+  <object id="134" name="barrel" x="621.841" y="282.332" width="15.75" height="14.75"/>
+  <object id="135" name="barrel" x="768.091" y="286.989" width="15.75" height="14.75"/>
+  <object id="136" name="barrel" x="413.178" y="383.869" width="15.75" height="14.75"/>
+  <object id="137" name="barrel" x="476.522" y="451.87" width="15.75" height="14.75"/>
+  <object id="138" name="barrel" x="497.016" y="451.528" width="15.75" height="14.75"/>
+  <object id="139" name="barrel" x="225.008" y="580.422" width="15.75" height="14.75"/>
+  <object id="140" name="barrel" x="255.749" y="677.301" width="15.75" height="14.75"/>
+  <object id="141" name="barrel" x="13.5502" y="627.93" width="15.75" height="14.75"/>
+  <object id="142" name="barrel" x="113.224" y="629.793" width="15.75" height="14.75"/>
+  <object id="143" name="barrel" x="350.765" y="627.93" width="15.75" height="14.75"/>
+  <object id="144" name="barrel" x="348.902" y="768.591" width="15.75" height="14.75"/>
+  <object id="145" name="ammo" x="320.024" y="19.6394" width="15.75" height="14.75"/>
+  <object id="146" name="ammo" x="703.816" y="20.571" width="15.75" height="14.75"/>
+  <object id="147" name="ammo" x="635.814" y="283.263" width="15.75" height="14.75"/>
+  <object id="148" name="ammo" x="749.461" y="287.921" width="15.75" height="14.75"/>
+  <object id="149" name="ammo" x="394.547" y="385.732" width="15.75" height="14.75"/>
+  <object id="150" name="ammo" x="141.17" y="577.627" width="15.75" height="14.75"/>
+  <object id="151" name="ammo" x="142.102" y="595.326" width="15.75" height="14.75"/>
+  <object id="152" name="ammo" x="271.585" y="677.233" width="15.75" height="14.75"/>
+  <object id="153" name="ammo" x="364.738" y="628.862" width="15.75" height="14.75"/>
+  <object id="154" name="ammo" x="365.669" y="767.66" width="15.75" height="14.75"/>
+  <object id="155" name="energy" x="252.954" y="52.2431" width="15.75" height="14.75"/>
+  <object id="156" name="energy" x="514.715" y="449.076" width="15.75" height="14.75"/>
+  <object id="157" name="energy" x="304.188" y="483.543" width="15.75" height="14.75"/>
+  <object id="158" name="energy" x="27.5232" y="627.93" width="15.75" height="14.75"/>
+  <object id="159" name="energy" x="97.3882" y="627.93" width="15.75" height="14.75"/>
+  <object id="160" name="energy" x="112.293" y="707.11" width="15.75" height="14.75"/>
+  <object id="161" name="energy" x="14.4818" y="704.316" width="15.75" height="14.75"/>
+  <object id="162" name="life" x="414.916" y="31.1244" width="16" height="16"/>
+  <object id="163" name="life" x="385.107" y="226.746" width="16" height="16"/>
+  <object id="164" name="life" x="373.928" y="382.312" width="16" height="16"/>
+  <object id="165" name="life" x="667.361" y="509.932" width="16" height="16"/>
+  <object id="166" name="life" x="379.517" y="631.031" width="16" height="16"/>
+  <object id="167" name="life" x="380.449" y="766.103" width="16" height="16"/>
+  <object id="168" name="life" x="290.09" y="675.745" width="16" height="16"/>
+  <object id="169" name="life" x="223.952" y="597.496" width="16" height="16"/>
+  <object id="172" name="slug" x="178.388" y="479.739" width="27.0144" height="24.2198"/>
+  <object id="173" name="slug" x="174.662" y="693.992" width="27.0144" height="24.2198"/>
+  <object id="174" name="slug" x="173.731" y="615.743" width="27.0144" height="24.2198"/>
+  <object id="175" name="slug" x="92.6875" y="571.029" width="27.0144" height="24.2198"/>
+  <object id="176" name="slug" x="477.41" y="565.44" width="27.0144" height="24.2198"/>
+  <object id="177" name="slug" x="632.045" y="226.362" width="27.0144" height="24.2198"/>
+  <object id="178" name="slug" x="672.101" y="65.2073" width="27.0144" height="24.2198"/>
+  <object id="179" name="slug" x="387.052" y="286.912" width="27.0144" height="24.2198"/>
+  <object id="180" name="slug" x="386.12" y="321.379" width="27.0144" height="24.2198"/>
+  <object id="181" name="slug" x="756.87" y="501.164" width="27.0144" height="24.2198"/>
+  <object id="182" name="slug" x="649.744" y="557.988" width="27.0144" height="24.2198"/>
+  <object id="183" name="slug" x="726.13" y="568.235" width="27.0144" height="24.2198"/>
  </objectgroup>
 </map>

@@ -2,10 +2,6 @@ package sk.tuke.kpi.oop.game;
 
 import sk.tuke.kpi.gamelib.*;
 import sk.tuke.kpi.gamelib.backends.lwjgl.LwjglBackend;
-import sk.tuke.kpi.oop.game.characters.Ripley;
-import sk.tuke.kpi.oop.game.scenarios.EscapeRoom;
-import sk.tuke.kpi.oop.game.scenarios.FirstSteps;
-import sk.tuke.kpi.oop.game.scenarios.MissionImpossible;
 import sk.tuke.kpi.oop.game.scenarios.MyScenario;
 
 public class Main {

@@ -34,10 +34,10 @@ public class Backpack implements ActorContainer<Collectible> {
 
     @Override
     public void add(@NotNull Collectible actor) {
-        if(items.size() >= capacity){
-            throw new IllegalStateException(name + "is full");
+        if(items.size() < capacity){
+            items.add(actor);
+//            throw new IllegalStateException(name + "is full");
         }
-        items.add(actor);
     }
 
     @Override

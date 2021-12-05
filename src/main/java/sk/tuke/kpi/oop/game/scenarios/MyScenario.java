@@ -38,15 +38,6 @@ public class MyScenario implements SceneListener {
         });
     }
 
-    @Override
-    public void sceneCreated(@NotNull Scene scene) {
-        scene.getMessageBus().subscribe(World.ACTOR_ADDED_TOPIC,actor -> {
-            if(actor instanceof NewNeutralAlien){
-                new RandomlyMoving().setUp((NewNeutralAlien) actor);
-            }
-        });
-    }
-
     static public class Factory implements ActorFactory {
 
         @Override
@@ -63,7 +54,7 @@ public class MyScenario implements SceneListener {
                     actor = new Energy();
                     break;
                 case "alien":
-                    actor = new Alien(new RandomlyMoving());
+                    actor = new Alien(45, new RandomlyMoving());
                     break;
                 case "alienTutorial":
                     actor = new AlienTutorial();
@@ -73,9 +64,6 @@ public class MyScenario implements SceneListener {
                     break;
                 case "money":
                     actor = new NewMoney();
-                    break;
-                case ("neutralAlien"):
-                    actor = new NewNeutralAlien();
                     break;
                 case "barrel":
                     actor = new NewBarrel();
@@ -118,6 +106,9 @@ public class MyScenario implements SceneListener {
                     break;
                 case "spitter":
                     actor = new NewSpitterAlien(new RandomlyMoving());
+                    break;
+                case "slug":
+                    actor = new NewSlugAlien(new RandomlyMoving());
                     break;
                 default:
                     return null;

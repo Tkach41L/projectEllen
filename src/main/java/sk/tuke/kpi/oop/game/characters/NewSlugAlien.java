@@ -11,12 +11,12 @@ import sk.tuke.kpi.oop.game.behaviours.Behaviour;
 
 import java.util.Objects;
 
-public class NewSpitterAlien extends Alien{
+public class NewSlugAlien extends Alien{
 
-    public NewSpitterAlien(Behaviour<? super Alien> behaviour) {
-        super(45, behaviour);
-        setAnimation(new Animation("sprites/spitter_alien.png", 32, 32, 0.1f));
-        super.setSpeed(2);
+    public NewSlugAlien(Behaviour<? super Alien> behaviour) {
+        super(20, behaviour);
+        setAnimation(new Animation("sprites/monster1.png", 16, 32, 0.1f));
+        super.setSpeed(1);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class NewSpitterAlien extends Alien{
                 new Loop<>(
                     new When<>(
                         () -> this.intersects(target),
-                        new Invoke<>(() -> target.getHealth().drain(2))
+                        new Invoke<>(() -> target.getHealth().drain(1))
                     )
                 ).scheduleFor(this);
             }

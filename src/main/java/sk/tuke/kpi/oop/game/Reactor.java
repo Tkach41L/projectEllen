@@ -6,7 +6,6 @@ import sk.tuke.kpi.gamelib.framework.AbstractActor;
 import sk.tuke.kpi.gamelib.graphics.Animation;
 import sk.tuke.kpi.oop.game.actions.PerpetualReactorHeating;
 
-import javax.swing.table.TableRowSorter;
 import java.util.HashSet;
 import java.util.Set;
 
