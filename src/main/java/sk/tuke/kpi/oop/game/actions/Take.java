@@ -19,9 +19,11 @@ public class Take<A extends Keeper> extends AbstractAction<A> {
         if (keeper != null && keeper.getBackpack().getSize() < keeper.getBackpack().getCapacity()) {
             for (Actor target : (Objects.requireNonNull(keeper.getScene())).getActors()) {
                 if (keeper.intersects(target) && keeper != target) {
-                    keeper.getBackpack().add((Collectible) target);
-                    (Objects.requireNonNull(target.getScene())).removeActor(target);
-                    return;
+                    if(keeper.getBackpack().getCapacity() > keeper.getBackpack().getSize()) {
+                        keeper.getBackpack().add((Collectible) target);
+                        (Objects.requireNonNull(target.getScene())).removeActor(target);
+                        return;
+                    }
                 }
             }
         }

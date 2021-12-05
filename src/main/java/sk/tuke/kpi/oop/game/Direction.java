@@ -81,7 +81,7 @@ public enum Direction{
         return dy;
     }
 
-    private int fix_twos(int num){
+    private int fixTwos(int num){
         if(num == 2 || num == -2){
             return num / 2;
         }
@@ -90,8 +90,8 @@ public enum Direction{
 
     public Direction combine(Direction other) {
         if(other != null) {
-            int newdx = fix_twos(this.dx + other.dx);
-            int newdy = fix_twos(this.dy + other.dy);
+            int newdx = fixTwos(this.dx + other.dx);
+            int newdy = fixTwos(this.dy + other.dy);
             for (Direction direction : Direction.values()) {
                 if (newdx == direction.dx && newdy == direction.dy) {
                     return direction;

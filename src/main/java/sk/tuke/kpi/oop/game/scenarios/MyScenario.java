@@ -45,6 +45,11 @@ public class MyScenario implements SceneListener {
                 new RandomlyMoving().setUp((Alien) actor);
             }
         });
+        scene.getMessageBus().subscribe(World.ACTOR_ADDED_TOPIC,actor -> {
+            if(actor instanceof TestNeutralAlien){
+                new RandomlyMoving().setUp((TestNeutralAlien) actor);
+            }
+        });
     }
 
     static public class Factory implements ActorFactory {
@@ -70,6 +75,18 @@ public class MyScenario implements SceneListener {
                     break;
                 case "ammo":
                     actor = new Ammo();
+                    break;
+                case "money":
+                    actor = new TestMoney();
+                    break;
+                case ("neutralAlien"):
+                    actor = new TestNeutralAlien();
+                    break;
+                case "barrel":
+                    actor = new TestBarrel();
+                    break;
+                case "life":
+                    actor = new TestExtraLife();
                     break;
                 case "laser":
                     actor = new NewLaser(NewLaser.TYPE.BASIC);

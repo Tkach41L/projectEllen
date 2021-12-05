@@ -4,38 +4,38 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Health {
-    private int health;
+    private int currentHealth;
     private int maxHealth;
     private Set<ExhaustionEffect> exhaustionEffects = new HashSet<>();
 
     public Health(int initialHealth, int maxHealth) {
-        this.health = initialHealth;
+        this.currentHealth = initialHealth;
         this.maxHealth = maxHealth;
     }
 
     public Health(int maxHealth) {
-        this.health = maxHealth;
+        this.currentHealth = maxHealth;
         this.maxHealth = maxHealth;
     }
 
     public int getValue() {
-        return health;
+        return currentHealth;
     }
 
     public void refill(int amount) {
-        this.health = Math.min(this.maxHealth, this.health + amount);
+        this.currentHealth = Math.min(this.maxHealth, this.currentHealth + amount);
     }
 
     public void restore() {
-        this.health = maxHealth;
+        this.currentHealth = maxHealth;
     }
 
     public void drain(int amount) {
-        if (health == 0) {
+        if (currentHealth == 0) {
             return;
         }
-        this.health = Math.max(0, health - amount);
-        if (health == 0) {
+        this.currentHealth = Math.max(0, currentHealth - amount);
+        if (currentHealth == 0) {
             for (ExhaustionEffect effect : exhaustionEffects) {
                 effect.apply();
             }
@@ -43,7 +43,7 @@ public class Health {
     }
 
     public void exhaust() {
-        if (this.health == 0){
+        if (this.currentHealth == 0){
             return;
         }
         drain(maxHealth);

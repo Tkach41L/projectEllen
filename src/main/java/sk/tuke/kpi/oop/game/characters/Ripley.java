@@ -105,11 +105,6 @@ public class Ripley extends AbstractActor implements Movable, Keeper, Alive, Arm
         this.firearm = weapon;
     }
 
-    @Override
-    public void addedToScene(@NotNull Scene scene) {
-        super.addedToScene(scene);
-    }
-
     public int getMoney() {
         return money;
     }

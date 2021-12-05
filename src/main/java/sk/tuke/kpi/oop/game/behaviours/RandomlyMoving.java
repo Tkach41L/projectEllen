@@ -2,8 +2,6 @@ package sk.tuke.kpi.oop.game.behaviours;
 
 import org.jetbrains.annotations.Nullable;
 import sk.tuke.kpi.gamelib.actions.Action;
-import sk.tuke.kpi.gamelib.actions.ActionSequence;
-import sk.tuke.kpi.gamelib.framework.actions.Loop;
 import sk.tuke.kpi.oop.game.Direction;
 import sk.tuke.kpi.oop.game.Movable;
 import sk.tuke.kpi.oop.game.actions.Move;
@@ -12,10 +10,8 @@ import java.util.Random;
 
 public class RandomlyMoving implements Behaviour<Movable>{
 
-    public Action<Movable> movementChain(){
-        return new Action<>() {
+    private class RandomMove implements Action<Movable> {
             private Movable actor;
-            private boolean done;
             private final Random random = new Random();
             private Move<Movable> move;
 
@@ -31,7 +27,7 @@ public class RandomlyMoving implements Behaviour<Movable>{
 
             @Override
             public boolean isDone() {
-                return done;
+                return false;
             }
 
             private Move<Movable> createRandomMove(){
@@ -54,7 +50,6 @@ public class RandomlyMoving implements Behaviour<Movable>{
             @Override
             public void reset() {
             }
-        };
     }
 
     @Override
@@ -62,8 +57,6 @@ public class RandomlyMoving implements Behaviour<Movable>{
         if(actor == null){
             return;
         }
-        new Loop<>(
-            this.movementChain()
-        ).scheduleFor(actor);
+        new RandomMove().scheduleFor(actor);
     }
 }

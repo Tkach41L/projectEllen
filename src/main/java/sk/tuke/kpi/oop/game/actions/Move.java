@@ -52,7 +52,7 @@ public class Move<A extends Movable> implements Action<A> {
 
     @Override
     public void execute(float deltaTime) {
-        if (actor == null) {
+        if (actor == null || done) {
             return;
         }
         timePassed += deltaTime;
